@@ -63,10 +63,21 @@ a {
   margin-left: 13px;
 }
 .underliner {
-  border-bottom: 0px solid #F2C900;
+  position: relative;
 }
-.underliner:hover {
+.underliner::after {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 0;
+  height: 10px;
+  content: "";
+  transition: width 0.5s;
+}
+.underliner:hover::after {
   border-bottom: 10px solid #F2C900;
+  width: 100%;
 }
 #mag_glass {
   width: 50px;
